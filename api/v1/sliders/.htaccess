@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Handle click endpoint
+RewriteRule ^click/?$ click.php [L,QSA]
+
+# Handle other requests
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L,QSA] 
